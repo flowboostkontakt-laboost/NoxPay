@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Environment
+.env
+frontend/.env
+
+# Hardhat
+cache/
+artifacts/
+dist/
+typechain/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Misc
+coverage/
+.coverage/
+.claude/
