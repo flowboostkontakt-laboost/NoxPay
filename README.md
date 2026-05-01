@@ -6,8 +6,8 @@ NoxPay is an institutional AI-driven privacy payroll framework built on iExec's 
 
 ## Live Demo
 
-- **Deployed Contract (Arbitrum Sepolia):** `0x492a25983c45341593ADf88e3CEF9493d4a66D61`
-- **Arbiscan:** [View on Arbiscan](https://sepolia.arbiscan.io/address/0x492a25983c45341593ADf88e3CEF9493d4a66D61)
+- **Deployed Contract (Arbitrum Sepolia):** `0xe397564d9ef1d0505d6f6a6acb0adeb24724de81`
+- **Arbiscan:** [View on Arbiscan](https://sepolia.arbiscan.io/address/0xe397564d9ef1d0505d6f6a6acb0adeb24724de81)
 - **Demo Video:** [Watch on YouTube / Loom](https://...) <!-- TODO: Add your video link -->
 - **X Post:** [Project Showcase](https://x.com/...) <!-- TODO: Add your X post link -->
 
