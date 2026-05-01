@@ -43,8 +43,8 @@ export async function* streamTaxAdvice(messages: ChatMessage[]) {
         const parsed = JSON.parse(data);
         const delta = parsed.choices?.[0]?.delta?.content;
         if (delta) yield delta;
-      } catch {
-        // ignore malformed JSON
+      } catch (err) {
+        console.warn("[ChainGPT] Malformed JSON chunk:", data, err);
       }
     }
   }
