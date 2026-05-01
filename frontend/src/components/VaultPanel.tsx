@@ -15,11 +15,11 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import {
   useNoxPayContract,
-  usePublicBalance,
   useConfidentialBalance,
   useUnderlyingToken,
   useTokenAllowance,
   useApproveToken,
+  useUnderlyingBalance,
 } from "@/hooks/useNoxPay";
 import { useNoxHandle } from "@/hooks/useNoxHandle";
 
@@ -27,7 +27,7 @@ export function VaultPanel() {
   const { address } = useAccount();
   const { client: handleClient } = useNoxHandle();
   const { underlying } = useUnderlyingToken();
-  const { balance: pubBal } = usePublicBalance(address);
+  const { balance: usdcBal } = useUnderlyingBalance(underlying, address);
   const { balanceHandle } = useConfidentialBalance(address);
   const { wrap, isPending, isConfirming } = useNoxPayContract();
   const { allowance } = useTokenAllowance(underlying, address, import.meta.env.VITE_NOXPAY_ADDRESS as `0x${string}`);
@@ -75,8 +75,8 @@ export function VaultPanel() {
           <div className="rounded-lg border border-border bg-surface-light p-4">
             <div className="text-xs text-text-muted">USDC Balance</div>
             <div className="mt-1 text-2xl font-semibold text-text">
-              {pubBal !== undefined
-                ? formatUnits(pubBal, 6)
+              {usdcBal !== undefined
+                ? formatUnits(usdcBal, 6)
                 : "—"}{" "}
               <span className="text-sm text-text-muted">USDC</span>
             </div>

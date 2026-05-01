@@ -71,6 +71,20 @@ export function usePublicBalance(address?: `0x${string}`) {
   return { balance: data as bigint | undefined, isLoading };
 }
 
+export function useUnderlyingBalance(
+  token?: `0x${string}`,
+  address?: `0x${string}`
+) {
+  const { data, isLoading } = useReadContract({
+    address: token,
+    abi: erc20Abi,
+    functionName: "balanceOf",
+    args: token && address ? [address] : undefined,
+    query: { enabled: !!token && !!address },
+  });
+  return { balance: data as bigint | undefined, isLoading };
+}
+
 export function useConfidentialBalance(address?: `0x${string}`) {
   const { data, isLoading } = useReadContract({
     address: NOXPAY_ADDRESS,
