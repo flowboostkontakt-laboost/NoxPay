@@ -23,6 +23,7 @@ export function useNoxPayContract() {
         abi: NoxPayAbi.abi,
         functionName: "wrap",
         args: [to, value],
+        gas: 500000n,
       });
     },
     [writeContract]
@@ -35,6 +36,7 @@ export function useNoxPayContract() {
         abi: NoxPayAbi.abi,
         functionName: "batchConfidentialTransfer",
         args: [to, amounts],
+        gas: 2000000n,
       });
     },
     [writeContract]
@@ -123,6 +125,7 @@ export function useApproveToken() {
         abi: erc20Abi,
         functionName: "approve",
         args: [spender, amount],
+        gas: 100000n,
       });
     },
     [writeContract]
