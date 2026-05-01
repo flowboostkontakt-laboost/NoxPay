@@ -40,7 +40,7 @@ export function VaultPanel() {
 
   const needsApproval =
     !!wrapAmount &&
-    !!allowance &&
+    allowance !== undefined &&
     allowance < parseUnits(wrapAmount || "0", 6);
 
   const handleReveal = async () => {
